@@ -124,6 +124,10 @@
             box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
         }
         
+        .download-actions {
+            margin: 16px 0 8px;
+        }
+
         .version-info {
             background: #e3f2fd;
             border-left: 4px solid #2196f3;
@@ -176,106 +180,89 @@
         <div class="header">
             <h1>UCSF Cranial Accelerometry Lab (CAL)</h1>
             <p>Applications for collection and analysis of headpulse data</p>
+            <p style="font-size:0.95em;color:#555;margin-top:12px;">Downloads and version info are hosted on this site via the <a href="https://github.com/stafne/cal/releases">stafne/cal</a> GitHub Releases.</p>
         </div>
         
         <div class="apps-grid">
             <!-- Anesthesia Monitor -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_anesthesia_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_anesthesia_icon.png" alt="HP Anesthesia" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
-                    <h2>Anesthesia Monitor</h2>
-                </a>
+            <div class="app-card" data-cal-app="anesthesia">
+                <div class="app-icon"><img src="icons/hp_py_anesthesia_icon.png" alt="HP Anesthesia" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+                <h2>Anesthesia Monitor</h2>
                 <p>Real-time EEG monitoring and analysis for macOS</p>
-                
                 <div class="app-description">
                     <p>This app takes live streamed data from HP headsets and graphs a frequency waterfall of the signals. Used primarily for intraoperative monitoring and is a useful app to observe your own headpulse during cognitive activities. Allows annotations as well.</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="anesthesia-version">Loading...</span>
                 </div>
             </div>
             
             <!-- HP Py Controller -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_controller_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_controller_icon.png" alt="HP Controller" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+            <div class="app-card" data-cal-app="controller">
+                <div class="app-icon"><img src="icons/hp_py_controller_icon.png" alt="HP Controller" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
                 <h2>HP Py Controller</h2>
-                </a>
                 <p>Professional BLE device controller for HP data collection systems</p>
-                
                 <div class="app-description">
                     <p>Use the app to program the headset for research recordings, measure bettery level, stream data as a test and perform other utility functions</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="controller-version">Loading...</span>
                 </div>
             </div>
             
             <!-- HP Py Sleep -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_sleep_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_sleep_icon.png" alt="HP Sleep" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
-                    <h2>HP Py Sleep</h2>
-                </a>
+            <div class="app-card" data-cal-app="sleep">
+                <div class="app-icon"><img src="icons/hp_py_sleep_icon.png" alt="HP Sleep" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+                <h2>HP Py Sleep</h2>
                 <p>Sleep monitoring and analysis application for macOS</p>
-                
                 <div class="app-description">
                     <p>This is a comprehensive tool for analysis of sleep data with or without .EDF data imported from EEG based sleep devices.</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="sleep-version">Loading...</span>
                 </div>
             </div>
             
             <!-- HP Py Attention -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_attention_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_attention_icon.png" alt="HP Attention" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
-                    <h2>HP Py Attention</h2>
-                </a>
+            <div class="app-card" data-cal-app="attention">
+                <div class="app-icon"><img src="icons/hp_py_attention_icon.png" alt="HP Attention" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+                <h2>HP Py Attention</h2>
                 <p>Attention and cognitive workload monitoring for macOS</p>
-                
                 <div class="app-description">
                     <p>This application supports collection and visualization of attention-related signals from HP headsets during cognitive tasks.</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="attention-version">Loading...</span>
                 </div>
             </div>
             
             <!-- HP Read and Merge -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_merge_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_merge_icon.png" alt="HP Merge" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
-                    <h2>HP Read and Merge</h2>
-                </a>
+            <div class="app-card" data-cal-app="merge">
+                <div class="app-icon"><img src="icons/hp_py_merge_icon.png" alt="HP Merge" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+                <h2>HP Read and Merge</h2>
                 <p>Merge and process multiple HP signal files for macOS</p>
-                
                 <div class="app-description">
                     <p>This application allows you to merge multiple HP signal files into a single file, with support for metadata integration and comprehensive signal processing.</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="merge-version">Loading...</span>
                 </div>
             </div>
 
             <!-- HP Py ICU -->
-            <div class="app-card">
-                <a href="https://stafne.github.io/hp_icu_mac/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="app-icon"><img src="icons/hp_py_icu_icon.png" alt="HP Icu" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
-                    <h2>HP Py ICU</h2>
-                </a>
+            <div class="app-card" data-cal-app="icu">
+                <div class="app-icon"><img src="icons/hp_py_icu_icon.png" alt="HP ICU" style="width:96px;height:96px;object-fit:contain;border-radius:12px;"></div>
+                <h2>HP Py ICU</h2>
                 <p>ICU signal review and analysis for macOS</p>
-                
                 <div class="app-description">
                     <p>Process and visualize HP headset accelerometer and related signals for intensive-care monitoring workflows, with HDF5 export and trace-based review aligned with other CAL apps.</p>
                 </div>
-                
+                <div class="download-actions"></div>
                 <div class="version-info">
                     <strong>Latest Version:</strong> <span id="icu-version">Loading...</span>
                 </div>
@@ -284,68 +271,117 @@
         
         <div class="footer">
             <p>© 2025 Wade Smith. All rights reserved.</p>
-            <p>For support or questions, please visit the individual <a href="https://github.com/stafne">GitHub repositories</a></p>
+            <p>Installers: <a href="https://github.com/stafne/cal/releases">stafne/cal releases</a> · Source: <a href="https://github.com/stafne">private hp_py_* repos</a></p>
         </div>
     </div>
     
     <script>
-        // Fetch version information for each application
-        async function loadVersionInfo() {
-            const apps = [
-                {
-                    name: 'anesthesia',
-                    repo: 'stafne/hp_anesthesia',
-                    elementId: 'anesthesia-version'
-                },
-                {
-                    name: 'controller',
-                    repo: 'stafne/hp_controller_mac',
-                    elementId: 'controller-version'
-                },
-                {
-                    name: 'sleep',
-                    repo: 'stafne/hp_sleep_mac',
-                    elementId: 'sleep-version'
-                },
-                {
-                    name: 'attention',
-                    repo: 'stafne/hp_attention_mac',
-                    elementId: 'attention-version'
-                },
-                {
-                    name: 'merge',
-                    repo: 'stafne/hp_merge_mac',
-                    elementId: 'merge-version'
-                },
-                {
-                    name: 'icu',
-                    repo: 'stafne/hp_icu_mac',
-                    elementId: 'icu-version'
+        const CAL_REPO = 'stafne/cal';
+        const CAL_APPS = [
+            { slug: 'anesthesia', tagPrefix: 'hp_anesthesia-', dmg: 'hp_py_anesthesia.dmg', zip: 'hp_py_anesthesia.zip', versionId: 'anesthesia-version', fallbackRepo: 'stafne/hp_anesthesia_mac' },
+            { slug: 'controller', tagPrefix: 'hp_controller-', dmg: 'hp_py_controller.dmg', zip: 'hp_py_controller.zip', versionId: 'controller-version', fallbackRepo: 'stafne/hp_controller_mac' },
+            { slug: 'sleep', tagPrefix: 'hp_sleep-', dmg: 'hp_py_sleep_mac.dmg', zip: 'hp_py_sleep_mac.zip', versionId: 'sleep-version', fallbackRepo: 'stafne/hp_sleep_mac' },
+            { slug: 'attention', tagPrefix: 'hp_attention-', dmg: 'hp_py_attention_mac.dmg', zip: 'hp_py_attention_mac.zip', versionId: 'attention-version', fallbackRepo: 'stafne/hp_attention_mac' },
+            { slug: 'merge', tagPrefix: 'hp_merge-', dmg: 'hp_py_merge.dmg', zip: 'hp_py_merge.zip', versionId: 'merge-version', fallbackRepo: 'stafne/hp_merge_mac' },
+            { slug: 'icu', tagPrefix: 'hp_icu-', dmg: 'hp_icu_mac.dmg', zip: 'hp_icu_mac.zip', versionId: 'icu-version', fallbackRepo: 'stafne/hp_icu_mac' },
+        ];
+
+        function displayVersion(tagName) {
+            const m = String(tagName).match(/v\d+\.\d+\.\d+/);
+            return m ? m[0] : tagName;
+        }
+
+        function findCalRelease(releases, app) {
+            if (!releases || !releases.length) return null;
+            const sorted = [...releases].sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+            for (const r of sorted) {
+                if (r.draft) continue;
+                if (r.tag_name && r.tag_name.startsWith(app.tagPrefix)) return r;
+            }
+            for (const r of sorted) {
+                if (r.draft) continue;
+                const names = (r.assets || []).map((a) => a.name);
+                if (names.includes(app.dmg) || names.includes(app.zip)) return r;
+            }
+            return null;
+        }
+
+        function releaseFromManifest(entry, app) {
+            const tag = entry.tag;
+            const base = `https://github.com/${CAL_REPO}/releases/download/${encodeURIComponent(tag)}`;
+            const assets = [];
+            if (entry.dmg) {
+                assets.push({ name: entry.dmg, browser_download_url: entry.dmg_url || `${base}/${entry.dmg}` });
+            }
+            if (entry.zip) {
+                assets.push({ name: entry.zip, browser_download_url: entry.zip_url || `${base}/${entry.zip}` });
+            }
+            return { tag_name: tag, published_at: entry.published || null, assets };
+        }
+
+        function renderDownloads(card, release, app) {
+            const actions = card.querySelector('.download-actions');
+            if (!release) {
+                actions.innerHTML = '<p style="color:#888;font-size:0.9em;">No release yet — <a href="https://github.com/stafne/cal/releases">cal releases</a></p>';
+                return;
+            }
+            const tag = release.tag_name;
+            const base = `https://github.com/${CAL_REPO}/releases/download/${encodeURIComponent(tag)}`;
+            const byName = new Map((release.assets || []).map((a) => [a.name, a.browser_download_url]));
+            let html = '';
+            const dmgUrl = byName.get(app.dmg) || `${base}/${app.dmg}`;
+            const zipUrl = byName.get(app.zip) || `${base}/${app.zip}`;
+            html += `<a class="download-btn" href="${dmgUrl}">Download DMG</a>`;
+            html += `<a class="download-btn secondary" href="${zipUrl}">Download ZIP</a>`;
+            actions.innerHTML = html;
+        }
+
+        async function fetchJson(url) {
+            const r = await fetch(url);
+            if (!r.ok) return null;
+            return r.json();
+        }
+
+        async function loadCalHub() {
+            let manifest = null;
+            try {
+                const m = await fetch('releases.json');
+                if (m.ok) manifest = await m.json();
+            } catch (_) { /* optional manifest */ }
+
+            const calReleases = await fetchJson(`https://api.github.com/repos/${CAL_REPO}/releases?per_page=100`);
+
+            for (const app of CAL_APPS) {
+                const card = document.querySelector(`[data-cal-app="${app.slug}"]`);
+                const versionEl = document.getElementById(app.versionId);
+                if (!card || !versionEl) continue;
+
+                let release = null;
+                if (manifest && manifest[app.slug]) {
+                    release = releaseFromManifest(manifest[app.slug], app);
                 }
-            ];
-            
-            for (const app of apps) {
-                try {
-                    const response = await fetch(`https://api.github.com/repos/${app.repo}/releases/latest`);
-                    if (response.ok) {
-                        const data = await response.json();
-                        const publishedDate = new Date(data.published_at).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                        });
-                        document.getElementById(app.elementId).textContent = `${data.tag_name} (${publishedDate})`;
-                    } else {
-                        document.getElementById(app.elementId).textContent = 'Unable to load';
-                    }
-                } catch (error) {
-                    document.getElementById(app.elementId).textContent = 'Unable to load';
+                if (!release && calReleases) {
+                    release = findCalRelease(calReleases, app);
+                }
+                if (!release && app.fallbackRepo) {
+                    release = await fetchJson(`https://api.github.com/repos/${app.fallbackRepo}/releases/latest`);
+                }
+
+                if (release && release.tag_name) {
+                    const publishedDate = release.published_at
+                        ? new Date(release.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+                        : '';
+                    const label = displayVersion(release.tag_name);
+                    versionEl.textContent = publishedDate ? `${label} (${publishedDate})` : label;
+                    renderDownloads(card, release, app);
+                } else {
+                    versionEl.textContent = 'Unable to load';
+                    renderDownloads(card, null, app);
                 }
             }
         }
-        
-        // Load version info when page loads
-        document.addEventListener('DOMContentLoaded', loadVersionInfo);
+
+        document.addEventListener('DOMContentLoaded', loadCalHub);
     </script>
 </body>
 </html>
