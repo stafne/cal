@@ -120,5 +120,5 @@ Keep **`hp_<app>_mac`** repos only if you want separate issue trackers or old li
 ## References
 
 - **`cal/index.html`** — hub UI and JavaScript for per-app releases on `stafne/cal`.
-- **`github_versioning.md`** — PyInstaller release flow (change upload target to `cal`).
+- **`github_versioning.md`** — full PyInstaller release + auto-update recipe (§0.1 CAL central hub aligns with this doc).
 - **`update_cal_site.py`** — copies `icons/<app>.png` into `cal/icons/` for `index.html` (GitHub Pages).

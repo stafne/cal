@@ -278,12 +278,12 @@
     <script>
         const CAL_REPO = 'stafne/cal';
         const CAL_APPS = [
-            { slug: 'anesthesia', tagPrefix: 'hp_anesthesia-', dmg: 'hp_py_anesthesia.dmg', zip: 'hp_py_anesthesia.zip', versionId: 'anesthesia-version', fallbackRepo: 'stafne/hp_anesthesia_mac' },
-            { slug: 'controller', tagPrefix: 'hp_controller-', dmg: 'hp_py_controller.dmg', zip: 'hp_py_controller.zip', versionId: 'controller-version', fallbackRepo: 'stafne/hp_controller_mac' },
-            { slug: 'sleep', tagPrefix: 'hp_sleep-', dmg: 'hp_py_sleep_mac.dmg', zip: 'hp_py_sleep_mac.zip', versionId: 'sleep-version', fallbackRepo: 'stafne/hp_sleep_mac' },
-            { slug: 'attention', tagPrefix: 'hp_attention-', dmg: 'hp_py_attention_mac.dmg', zip: 'hp_py_attention_mac.zip', versionId: 'attention-version', fallbackRepo: 'stafne/hp_attention_mac' },
-            { slug: 'merge', tagPrefix: 'hp_merge-', dmg: 'hp_py_merge.dmg', zip: 'hp_py_merge.zip', versionId: 'merge-version', fallbackRepo: 'stafne/hp_merge_mac' },
-            { slug: 'icu', tagPrefix: 'hp_icu-', dmg: 'hp_icu_mac.dmg', zip: 'hp_icu_mac.zip', versionId: 'icu-version', fallbackRepo: 'stafne/hp_icu_mac' },
+            { slug: 'anesthesia', tagPrefix: 'hp_anesthesia-', dmg: 'hp_py_anesthesia.dmg', zip: 'hp_py_anesthesia.zip', versionId: 'anesthesia-version' },
+            { slug: 'controller', tagPrefix: 'hp_controller-', dmg: 'hp_py_controller.dmg', zip: 'hp_py_controller.zip', versionId: 'controller-version' },
+            { slug: 'sleep', tagPrefix: 'hp_sleep-', dmg: 'hp_py_sleep_mac.dmg', zip: 'hp_py_sleep_mac.zip', versionId: 'sleep-version' },
+            { slug: 'attention', tagPrefix: 'hp_attention-', dmg: 'hp_py_attention_mac.dmg', zip: 'hp_py_attention_mac.zip', versionId: 'attention-version' },
+            { slug: 'merge', tagPrefix: 'hp_merge-', dmg: 'hp_py_merge.dmg', zip: 'hp_py_merge.zip', versionId: 'merge-version' },
+            { slug: 'icu', tagPrefix: 'hp_icu-', dmg: 'hp_icu_mac.dmg', zip: 'hp_icu_mac.zip', versionId: 'icu-version' },
         ];
 
         function displayVersion(tagName) {
@@ -363,10 +363,6 @@
                 if (!release && calReleases) {
                     release = findCalRelease(calReleases, app);
                 }
-                if (!release && app.fallbackRepo) {
-                    release = await fetchJson(`https://api.github.com/repos/${app.fallbackRepo}/releases/latest`);
-                }
-
                 if (release && release.tag_name) {
                     const publishedDate = release.published_at
                         ? new Date(release.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
