@@ -35,7 +35,7 @@ GitHub allows **many releases** in one repo. Each app needs its **own tag prefix
 |----------|---------------------|-------------------|
 | sleep | `hp_sleep-v1.0.81` | `hp_py_sleep_mac.dmg` |
 | merge | `hp_merge-v1.0.5` | `hp_py_merge.dmg` |
-| controller | `hp_controller-v1.0.3` | `hp_py_controller.dmg` |
+| controller | `hp_controller-v1.0.3` | `HP_Controller.dmg` |
 | attention | `hp_attention-v1.0.2` | `hp_py_attention_mac.dmg` |
 | anesthesia | `hp_anesthesia-v1.0.0` | (match your PyInstaller output name) |
 | icu | `hp_icu-v1.0.0` | (match your PyInstaller output name) |
