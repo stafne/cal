@@ -319,6 +319,29 @@
             return { tag_name: tag, published_at: entry.published || null, assets };
         }
 
+        const LEGACY_RELEASE_ASSETS = {
+            sleep: {
+                dmg: ['hp_py_sleep_mac.dmg', 'HP.Sleep.dmg', 'HP Sleep.dmg'],
+                zip: ['hp_py_sleep_mac.zip', 'HP.Sleep.zip', 'HP Sleep.zip'],
+            },
+            attention: {
+                dmg: ['hp_py_attention_mac.dmg', 'HP.Attention.dmg', 'HP Attention.dmg'],
+                zip: ['hp_py_attention_mac.zip', 'HP.Attention.zip', 'HP Attention.zip'],
+            },
+            merge: {
+                dmg: ['HP Merge.dmg', 'HP.Merge.dmg', 'hp_py_merge.dmg'],
+                zip: ['HP Merge.zip', 'HP.Merge.zip', 'hp_py_merge.zip'],
+            },
+        };
+
+        function resolveReleaseAsset(byName, base, canonicalName, legacyNames) {
+            if (byName.has(canonicalName)) return byName.get(canonicalName);
+            for (const legacy of legacyNames || []) {
+                if (byName.has(legacy)) return byName.get(legacy);
+            }
+            return `${base}/${encodeURIComponent(canonicalName)}`;
+        }
+
         function renderDownloads(card, release, app) {
             const actions = card.querySelector('.download-actions');
             if (!release) {
@@ -328,9 +351,10 @@
             const tag = release.tag_name;
             const base = `https://github.com/${CAL_REPO}/releases/download/${encodeURIComponent(tag)}`;
             const byName = new Map((release.assets || []).map((a) => [a.name, a.browser_download_url]));
+            const legacy = LEGACY_RELEASE_ASSETS[app.slug] || {};
             let html = '';
-            const dmgUrl = byName.get(app.dmg) || `${base}/${app.dmg}`;
-            const zipUrl = byName.get(app.zip) || `${base}/${app.zip}`;
+            const dmgUrl = resolveReleaseAsset(byName, base, app.dmg, legacy.dmg);
+            const zipUrl = resolveReleaseAsset(byName, base, app.zip, legacy.zip);
             html += `<a class="download-btn" href="${dmgUrl}">Download DMG</a>`;
             html += `<a class="download-btn secondary" href="${zipUrl}">Download ZIP</a>`;
             actions.innerHTML = html;
